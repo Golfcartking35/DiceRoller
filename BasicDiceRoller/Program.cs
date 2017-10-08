@@ -18,13 +18,15 @@ namespace BasicDiceRoller
             Random Random = new Random();
 
             //get information
-            Console.WriteLine("Type in your dice. e.g. 2d6 or 1d20");
+            Console.WriteLine("How many die?");
             reader = Console.ReadLine();
-            diceNumber = reader[0];
-            diceSides = reader[3 + 4];
-            Console.WriteLine("Any mods? If none type 0");
+            diceNumber = Convert.ToInt32(reader);
+            Console.WriteLine("How many sides on the die?");
             reader = Console.ReadLine();
-            mod = Convert.ToInt16(reader);
+            diceSides = Convert.ToInt32(reader);
+            Console.WriteLine("Any mods? If none enter 0.");
+            reader= Console.ReadLine();
+            mod = Convert.ToInt32(reader);
 
             //perform rolls
             for (int i = 0; i < diceNumber; i++)
@@ -35,6 +37,6 @@ namespace BasicDiceRoller
 
             //display results
             Console.WriteLine($"{diceNumber}d{diceSides} + {mod} result: {total}");
-        }
-    }
-}
+        }//end of main
+    }//end of class
+}   
